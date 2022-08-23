@@ -1,0 +1,1375 @@
+@import url(//db.onlinewebfonts.com/c/1fdf9a4d690c4e7271e535c39f40045f?family=Miller+Display);
+
+@font-face {
+  font-family: "Miller Display";
+  src: url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.eot");
+  src: url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.svg#Miller Display") format("svg");
+}
+
+@import './config';
+
+@mixin flexAlign($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  flex-wrap: wrap;
+}
+
+;
+
+@mixin transition($time) {
+  transition: all $time ease-in-out;
+}
+
+;
+
+@mixin smallFont($font-size, $color) {
+  font-family: Montserrat;
+  font-size: $font-size;
+  text-transform: uppercase;
+  color: $color;
+  letter-spacing: 4px;
+  margin: 30px;
+}
+
+;
+
+@mixin headerFont($font-size, $color) {
+  font-family: 'Miller Display';
+  font-size: $font-size;
+  font-weight: weight(regular);
+  margin: 40px auto 30px;
+  color: $color;
+}
+
+;
+
+@mixin paragraphFont($font-size) {
+  font-family: 'Merriweather';
+  font-size: $font-size;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  line-height: 2.2;
+  color: $paragraph-color;
+}
+
+;
+
+@mixin button($font-size) {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 14px 120px;
+  font-family: 'Miller Display';
+  color: $accent-color;
+  font-size: $font-size;
+  font-weight: weight(regular);
+  letter-spacing: -0.5px;
+  border: 0.5px solid $accent-color;
+  margin: 50px auto 0px;
+  cursor: pointer;
+}
+
+@mixin buttonHover($color) {
+  color: $color;
+  border: 1px solid $color;
+  background-color: rgba(199, 188, 176, 0.5)
+}
+
+;
+
+@mixin mobile($min-size, $max-size) {
+  @media only screen and (min-width:$min-size) and (max-width:$max-size) {
+    @content;
+  }
+}
+
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name )
+}
+
+;
+
+body {
+  background-color: $primary-color;
+}
+
+.navbar {
+  @include flexAlign(space-between);
+  background-color: white;
+  position: fixed;
+  top: 0;
+  margin: 0;
+  z-index: 99;
+  flex-wrap: nowrap;
+  width: 100%;
+  @include transition(300ms);
+
+  #logo-container {
+    background-color: $accent-color;
+    padding: 10px;
+
+    .header-logo {
+      width: 160px;
+
+      @include mobile($mobile-small, $mobile-medium) {
+        width: 95px;
+      }
+
+      @include mobile($mobile-medium, $mobile-large) {
+        width: 150px;
+      }
+
+      @include mobile($mobile-large, $mobile-xl) {
+        width: 175px;
+      }
+
+      @include mobile($mobile-xl, $laptop) {
+        width: 110px;
+      }
+    }
+
+  }
+
+  #menu-section {
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: weight(bold);
+    @include flexAlign(space-between);
+
+    div {
+      text-align: center;
+      margin: 0px 40px;
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        margin: 0px 10px;
+      }
+
+      @include mobile($mobile-tablet, $laptop) {
+        margin: 0px 15px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $text-color;
+        @include transition(200ms);
+      }
+
+      a:hover {
+        color: $accent-color;
+      }
+    }
+
+    @include mobile($mobile-small, $mobile-xl) {
+      display: none;
+    }
+
+    @include mobile($mobile-xl, $mobile-tablet) {
+      font-size: 11px;
+    }
+  }
+
+  #search {
+    margin-right: 100px;
+
+    @include mobile($mobile-medium, $mobile-xl) {
+      margin-right: 90px;
+    }
+
+    @include mobile($mobile-xl, $mobile-tablet) {
+      margin-right: 10px;
+    }
+
+    @include mobile($mobile-tablet, $laptop) {
+      margin-right: 20px;
+    }
+
+    .search-bar {
+      border: 0px;
+      border-bottom: 2px solid black;
+      width: 90px;
+
+      @include mobile($mobile-small, $mobile-medium) {
+        width: 60px;
+      }
+
+      @include mobile($mobile-medium, $mobile-large) {
+        width: 90px;
+      }
+
+      @include mobile($mobile-large, $mobile-xl) {
+        width: 75px;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        width: 50px;
+      }
+
+      @include mobile($mobile-tablet, $laptop ) {
+        width: 70px;
+      }
+    }
+
+    #search-button {
+      width: 10px;
+
+      @include mobile($mobile-medium, $mobile-large) {
+        width: 15px;
+      }
+    }
+  }
+}
+
+.scroll-active {
+  top: -20vh;
+  @include transition(300ms)
+}
+
+.menu-btn-container {
+  top: -10vh;
+  right: 20px;
+  z-index: 999;
+  @include transition(300ms);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  position: fixed;
+  cursor: pointer;
+
+  .menu-btn-bar1,
+  .menu-btn-bar2,
+  .menu-btn-bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: $accent-color;
+    margin: 3px auto;
+    transition: 0.4s;
+
+    @include mobile($mobile-small, $mobile-tablet) {
+      width: 25px;
+      height: 2px;
+    }
+  }
+
+  @include mobile($mobile-small, $mobile-xl) {
+    right: 10px;
+    top: 0px;
+    background-color: transparent;
+  }
+
+  @include mobile($mobile-xl, $mobile-tablet) {
+    right: 20px;
+  }
+
+
+
+  .change .menu-btn-bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+
+    @include mobile($mobile-small, $mobile-tablet) {
+      -webkit-transform: rotate(-45deg) translate(-4px, 6px);
+      transform: rotate(-45deg) translate(-4px, 6px);
+    }
+
+  }
+
+  .change .menu-btn-bar2 {
+    opacity: 0;
+  }
+
+  .change .menu-btn-bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+
+
+    @include mobile($mobile-small, $mobile-tablet) {
+      -webkit-transform: rotate(45deg) translate(-5px, -8px);
+      transform: rotate(45deg) translate(-5px, -8px);
+    }
+  }
+}
+
+.btn-scroll-active {
+  top: 20px;
+  right: 20px;
+  position: fixed;
+  @include transition(300ms);
+
+  @include mobile($mobile-small, $mobile-medium) {
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8)
+  }
+
+  @include mobile($mobile-medium, $mobile-tablet) {
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8)
+  }
+}
+
+.scroll-inactive {
+  @include transition(300ms);
+}
+
+.hidden-menu {
+  height: 100vh;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  width: 100%;
+  @include transition(900ms);
+
+  .hidden-menu-links {
+    margin: 35px;
+
+    @include mobile($mobile-small, $mobile-tablet) {
+      margin: 20px;
+    }
+
+    a {
+      @include smallFont(25px, $text-color);
+      @include transition(200ms);
+      text-decoration: none;
+
+      @include mobile($mobile-small, $mobile-medium) {
+        font-size: 13px;
+      }
+
+      @include mobile($mobile-medium, $mobile-tablet) {
+        font-size: 16px;
+      }
+    }
+
+    a:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.is-hidden {
+  left: -220vh;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 60%;
+  background-position-x: center;
+  width: 100%;
+  @include flexAlign(center);
+  text-align: center;
+  position: relative;
+
+  .heading {
+    max-width: 550px;
+    padding-top: 120px;
+
+    @include mobile($mobile-medium, $mobile-large) {
+      padding: 120px 25px;
+    }
+
+    @include mobile($mobile-xl, $mobile-tablet) {
+      padding-top: 80px;
+    }
+
+    h1 {
+      @include headerFont(75px, $primary-color);
+
+      @include mobile($mobile-small, $mobile-medium) {
+        font-size: 43px;
+      }
+
+      @include mobile($mobile-medium, $mobile-tablet) {
+        font-size: 45px;
+      }
+
+      @include mobile($mobile-tablet, $laptop) {
+        font-size: 56px;
+      }
+    }
+
+    h3 {
+      @include smallFont(13px, $primary-color);
+
+      @include mobile($mobile-small, $mobile-tablet) {
+        font-size: 11px;
+      }
+    }
+
+    p {
+      font-family: 'Montserrat';
+      font-size: 11px;
+      font-weight: weight(medium);
+      letter-spacing: 1px;
+      color: $primary-color;
+
+      @include mobile($mobile-small, $mobile-tablet) {
+        font-size: 9px
+      }
+    }
+
+    button {
+      @include button(22px);
+      @include transition(300ms);
+
+      @include mobile($mobile-small, $mobile-large) {
+        padding: 12px 60px;
+        font-size: 17px;
+      }
+
+      @include mobile($mobile-large, $mobile-xl) {
+        margin: 35px auto 100px;
+        padding: 14px 60px;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        margin: 35px auto 100px;
+        padding: 14px 60px;
+        font-size: 16px;
+      }
+
+      @include mobile($mobile-tablet, $laptop) {
+        padding: 14px 80px;
+      }
+    }
+
+    button:hover {
+      @include buttonHover($primary-color)
+    }
+  }
+}
+
+.overlay-pic {
+  width: 315px;
+  height: 210px;
+  position: absolute;
+  bottom: 0;
+  right: 115px;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/watch-small.png);
+  background-size: cover;
+
+  .title {
+    width: 50%;
+    margin: 22px;
+
+    @include mobile($mobile-tablet, $laptop) {
+      width: 65%;
+    }
+
+    p {
+      font-size: 16px;
+      font-family: 'Miller Display';
+      font-weight: weight(medium);
+      color: $primary-color;
+    }
+  }
+
+  .link {
+    text-align: right;
+    position: absolute;
+    bottom: 25px;
+    right: 20px;
+
+    a {
+      @include smallFont(10px, $primary-color);
+      text-decoration: none;
+      font-weight: weight(bold);
+      margin: 10px;
+      @include transition(200ms);
+    }
+
+    a:hover {
+      color: $accent-color;
+    }
+  }
+
+  @include mobile($mobile-small, $mobile-tablet) {
+    display: none;
+  }
+
+  @include mobile($mobile-tablet, $laptop) {
+    width: 250px;
+    height: 175px;
+    right: 0px;
+  }
+}
+
+.main {
+  margin: 0px 50px;
+
+  @include mobile($mobile-small, $mobile-large) {
+    margin: 0px 40px;
+  }
+
+  @include mobile($mobile-large, $mobile-tablet) {
+    margin: 0px 35px;
+  }
+
+  .intro {
+    @include flexAlign(space-between);
+    align-items: flex-start;
+    margin-bottom: 50px;
+
+    .intro-header {
+      flex-basis: 100%;
+      padding-right: 70%;
+
+      @include mobile($mobile-small, $mobile-large) {
+        padding-right: 0px;
+      }
+
+      @include mobile($mobile-large, $laptop) {
+        padding-right: 30%;
+      }
+
+      h2 {
+        @include headerFont(50px, $text-color);
+
+        @include mobile($mobile-small, $mobile-medium) {
+          font-size: 32px;
+        }
+
+        @include mobile($mobile-medium, $mobile-large) {
+          font-size: 35px;
+        }
+
+        @include mobile($mobile-large, $mobile-xl) {
+          font-size: 42px;
+        }
+      }
+    }
+
+    .section1 {
+      flex-basis: 30%;
+      padding-right: 20px;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        flex-basis: 100%;
+        padding-right: 0px;
+        margin-bottom: 20px;
+      }
+
+      @include mobile($mobile-xl, $laptop) {
+        flex-basis: 40%;
+      }
+    }
+
+    .section2 {
+      flex-basis: 50%;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        flex-basis: 100%;
+      }
+    }
+
+    .intro-text {
+      p {
+        @include paragraphFont(11px);
+      }
+    }
+  }
+
+  .content-table {
+    @include flexAlign(center);
+
+    .table-item {
+      flex-basis: 50%;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        flex-basis: 100%;
+      }
+
+      @include mobile($mobile-large, $mobile-xl) {
+        margin-bottom: 30px;
+      }
+
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+
+      .table-text {
+        text-align: center;
+        padding: 0px 60px;
+
+        @include mobile($mobile-small, $mobile-large) {
+          padding: 0px
+        }
+
+        @include mobile($mobile-large, $mobile-tablet) {
+          padding: 0px 15px;
+        }
+
+        @include mobile($mobile-tablet, $laptop) {
+          padding: 0px 20px;
+        }
+
+        h3 {
+          @include smallFont(14px, $text-color);
+          margin: 15px 0px;
+
+          @include mobile($mobile-small, $mobile-large) {
+            font-size: 11px;
+          }
+
+          @include mobile($mobile-large, $mobile-xl) {
+            font-size: 11px;
+            margin: 15px 0px 0px;
+          }
+
+          @include mobile($mobile-xl, $mobile-tablet) {
+            font-size: 8px;
+            margin: 15px 0px 0px;
+          }
+
+          @include mobile($mobile-tablet, $laptop) {
+            font-size: 10px;
+            margin: 10px auto 5px;
+          }
+        }
+
+        h2 {
+          @include headerFont(45px, $text-color);
+          margin: 20px auto;
+
+          @include mobile($mobile-small, $mobile-xl) {
+            font-size: 30px;
+          }
+
+          @include mobile($mobile-xl, $mobile-tablet) {
+            font-size: 11px;
+            margin: 10px 0px;
+          }
+
+          @include mobile($mobile-tablet, $laptop) {
+            font-size: 38px;
+            margin: 0px auto 0px;
+          }
+        }
+
+        p {
+          @include paragraphFont(15px);
+          margin: 75px auto 0px;
+
+          @include mobile($mobile-small, $mobile-large) {
+            font-size: 13px;
+            margin: 30px auto 0px;
+          }
+
+          @include mobile($mobile-large, $mobile-xl) {
+            font-size: 12px;
+            margin: 20px auto 0px;
+          }
+
+          @include mobile($mobile-xl, $mobile-tablet) {
+            font-size: 10px;
+            margin: 0px 0px 0px;
+            line-height: 2
+          }
+
+          @include mobile($mobile-tablet, $laptop) {
+            font-size: 13px;
+            margin: 15px auto 0px;
+          }
+        }
+      }
+
+      button {
+        @include button(22px);
+        @include transition(200ms);
+
+        @include mobile($mobile-small, $mobile-large) {
+          padding: 15px 75px;
+          font-size: 20px;
+          margin: 20px auto 40px;
+        }
+
+        @include mobile($mobile-large, $mobile-tablet) {
+          margin: 10px auto 0px;
+          font-size: 16px;
+          padding: 8px 60px;
+        }
+
+        @include mobile($mobile-tablet, $laptop) {
+          font-size: 18px;
+          margin: 15px auto 0px;
+          padding: 14px 80px;
+        }
+      }
+    }
+
+    button:hover {
+      @include buttonHover($primary-color);
+    }
+  }
+
+
+  .tab-itm-img {
+    flex-basis: 50%;
+  }
+}
+
+
+.press-section {
+  @include flexAlign(space-between);
+  align-items: flex-start;
+  margin-top: 50px;
+
+  @include mobile($mobile-small, $mobile-xl) {
+    margin-top: 0px;
+  }
+
+  @include mobile($mobile-xl, $mobile-tablet) {
+    margin-top: 35px;
+  }
+
+  .section1 {
+    flex-basis: 50%;
+
+    @include mobile($mobile-small, $mobile-xl) {
+      flex-basis: 100%;
+    }
+
+    h2 {
+      @include headerFont(68px, $text-color);
+
+      @include mobile($mobile-small, $mobile-xl) {
+        font-size: 40px;
+        margin: 15px auto 30px;
+      }
+
+      @include mobile($mobile-large, $laptop) {
+        font-size: 50px;
+      }
+
+
+    }
+
+    p {
+      width: 60%;
+      @include paragraphFont(15px);
+
+      @include mobile($mobile-small, $mobile-xl) {
+        font-size: 15px;
+        width: 100%;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        font-size: 11px;
+        width: 45%;
+      }
+
+      @include mobile($mobile-tablet, $laptop) {
+        font-size: 13px;
+        width: 45%;
+      }
+    }
+  }
+
+  .slider {
+    flex-basis: 50%;
+
+    @include mobile($mobile-small, $mobile-xl) {
+      flex-basis: 100%;
+    }
+
+    .testimonial-container {
+      position: relative;
+      background: $background-color;
+      height: 550px;
+      margin: 50px auto;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        height: 370px;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        height: 495px;
+      }
+
+      .card-body {
+        height: 300px;
+        width: 90%;
+        margin: 30px auto;
+
+        .card-content {
+          float: right;
+          width: 70%;
+          text-align: left;
+          float: right;
+          margin-top: 170px;
+
+          @include mobile($mobile-small, $mobile-large) {
+            float: left;
+            width: 90%;
+            margin: 160px 15px 0px;
+          }
+
+          @include mobile($mobile-large, $mobile-xl) {
+            float: left;
+            width: 90%;
+            margin: 170px 15px 0px;
+          }
+
+          @include mobile($mobile-xl, $mobile-tablet) {
+            width: 45%;
+            margin-top: 130px;
+          }
+
+          @include mobile($mobile-tablet, $laptop) {
+            width: 55%;
+            margin-top: 155px;
+          }
+
+          .card-subtitle {
+            @include smallFont(12px, $text-color);
+            margin: 0px;
+
+            @include mobile($mobile-small, $mobile-xl) {
+              margin-top: 20px;
+            }
+
+            @include mobile($mobile-xl, $mobile-tablet) {
+              font-size: 11px;
+            }
+          }
+
+          .card-date {
+            @include smallFont(12px, $accent-color);
+            margin: 10px 0px 0px 0px;
+
+            @include mobile($mobile-xl, $mobile-tablet) {
+              font-size: 11px
+            }
+          }
+
+          .card-title {
+            @include headerFont(30px, $text-color);
+
+            @include mobile($mobile-small, $mobile-xl) {
+              font-size: 25px;
+              margin: 25px auto 30px;
+            }
+
+
+            @include mobile($mobile-xl, $mobile-tablet) {
+              font-size: 23px;
+            }
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 170px;
+          left: -205px;
+          width: 400px;
+          float: left;
+          box-shadow: -7px 0px 0px #000;
+          filter: grayscale(1);
+
+          @include mobile($mobile-small, $mobile-large) {
+            top: -30px;
+            left: -13px;
+            width: 70%;
+            float: none;
+          }
+
+          @include mobile($mobile-large, $mobile-xl) {
+            top: -30px;
+            left: -5px;
+            width: 65%;
+            float: none;
+          }
+
+          @include mobile($mobile-xl, $mobile-tablet) {
+            top: 130px;
+            left: -140px;
+            width: 270px;
+          }
+
+          @include mobile($mobile-tablet, $laptop) {
+            top: 135px;
+            left: -170px;
+            width: 300px;
+          }
+        }
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 72%;
+        width: auto;
+        margin-top: -30px;
+        padding: 16px;
+        color: $paragraph-color;
+        font-weight: bold;
+        font-size: 12px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        text-decoration: none;
+      }
+
+      @include mobile($mobile-large, $mobile-xl) {
+        top: 92%;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        top: 74%;
+      }
+
+      .prev {
+        left: 210px;
+
+        @include mobile($mobile-small, $mobile-large) {
+          left: 15px;
+          top: 340px;
+        }
+
+        @include mobile($mobile-large, $mobile-xl) {
+          left: 20px;
+          top: 340px;
+        }
+
+        @include mobile($mobile-xl, $mobile-tablet) {
+          left: 130px;
+        }
+
+        @include mobile($mobile-tablet, $laptop) {
+          left: 140px;
+          top: 415px;
+        }
+      }
+
+      .next {
+        left: 250px;
+
+        @include mobile($mobile-small, $mobile-large) {
+          left: 50px;
+          top: 340px;
+        }
+
+        @include mobile($mobile-large, $mobile-xl) {
+          left: 50px;
+          top: 340px;
+        }
+
+        @include mobile($mobile-xl, $mobile-tablet) {
+          left: 165px;
+        }
+
+        @include mobile($mobile-tablet, $laptop) {
+          left: 200px;
+          top: 415px;
+        }
+      }
+
+      .prev:hover,
+      .next:hover {
+        color: $accent-color;
+      }
+
+      .slide .item {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+
+        to {
+          opacity: 1
+        }
+      }
+    }
+  }
+}
+
+.product-showcase {
+  @include flexAlign(center);
+  align-items: stretch;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .showcase-social {
+    flex-basis: 50%;
+
+    @include mobile($mobile-small, $mobile-xl) {
+      flex-basis: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .showcase-social-content {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/prod-showcase-1.png);
+      background-size: cover;
+      height: 100%;
+      @include flexAlign(center);
+      text-align: center;
+      padding: 150px;
+      @include transition(200ms);
+      color: $primary-color;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        padding: 0px;
+      }
+
+      @include mobile($mobile-xl, $laptop) {
+        padding: 30px;
+      }
+
+      h3 {
+        @include smallFont(14px, inherit);
+
+        @include mobile($mobile-small, $mobile-xl) {
+          font-size: 12px;
+          margin: 50px auto 0px;
+        }
+
+        @include mobile($mobile-xl, $mobile-tablet) {
+          font-size: 12px;
+        }
+
+      }
+
+      h2 {
+        @include headerFont(70px, inherit);
+
+        @include mobile($mobile-small, $mobile-xl) {
+          font-size: 30px;
+          padding: 0px 30px;
+          margin: 40px auto 60px;
+        }
+
+        @include mobile($mobile-xl, $mobile-tablet) {
+          font-size: 40px;
+        }
+
+        @include mobile($mobile-tablet, $laptop) {
+          font-size: 50px;
+          margin: 10pz auto 30px;
+        }
+      }
+    }
+
+    .showcase-social-content:hover {
+      background: linear-gradient(rgb(199 188 176 / 60%), rgb(199 188 176 / 60%)), url(../media/prod-showcase-1.png);
+      background-size: cover;
+      color: $text-color;
+    }
+  }
+
+  .showcase-grid {
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mobile($mobile-small, $mobile-xl) {
+      flex-basis: 100%;
+    }
+  }
+
+  .showcase-grid-item {
+    flex-basis: 50%;
+
+    a {
+      @include transition(200ms);
+    }
+
+    a:hover {
+      filter: grayscale(1);
+    }
+  }
+}
+
+.contacts-section {
+  width: 100%;
+  background: url(../media/contacts-bg.png);
+  background-size: cover;
+  background-position-y: center;
+  margin-top: 50px;
+
+  .contacts-content {
+    background-color: rgba(199, 188, 176, 0.7);
+    padding: 10px 300px 40px;
+    text-align: center;
+
+    @include mobile($mobile-small, $mobile-xl) {
+      padding: 15px;
+    }
+
+    ;
+
+    @include mobile($mobile-xl, $mobile-tablet) {
+      padding: 10px 85px 40px;
+    }
+
+    @include mobile($mobile-tablet, $laptop) {
+      padding: 10px 150px 40px;
+    }
+
+    h2 {
+      @include headerFont(70px, $primary-color);
+      margin: 15px auto;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        font-size: 30px;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        font-size: 50px;
+      }
+
+      @include mobile($mobile-tablet, $laptop) {
+        font-size: 60px;
+      }
+    }
+
+    h3 {
+      @include smallFont(14px, $primary-color);
+      margin: 10px auto 35px;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        font-size: 11px;
+        margin: 10px auto 20px;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        font-size: 13px;
+      }
+    }
+
+    #email,
+    #submit-button {
+      border: 1px solid $primary-color;
+      color: $primary-color;
+      padding: 15px 15px;
+      text-align: left;
+      font-family: "Miller Display";
+      background-color: transparent;
+      margin-right: 10px;
+      font-size: 16px;
+      @include transition(200ms);
+
+      @include mobile($mobile-small, $mobile-xl) {
+        padding: 13px 15px;
+        margin-right: 5px;
+      }
+    }
+
+    #email::placeholder {
+      color: $primary-color;
+      font-size: 16px;
+    }
+  }
+
+  #email {
+    width: 268px;
+
+    @include mobile($mobile-small, $mobile-xl) {
+      width: 145px;
+    }
+  }
+
+  #submit-button {
+    cursor: pointer;
+  }
+
+  #submit-button:hover {
+    border: 2px solid $primary-color;
+  }
+}
+
+
+footer {
+  padding: 120px 150px 150px;
+  background-color: $footer-color;
+  font-family: 'Miller Display';
+  color: $accent-color;
+  font-size: 14px;
+  line-height: 2.5;
+
+  @include mobile($mobile-small, $mobile-xl) {
+    padding: 40px 45px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  @include mobile($mobile-xl, $mobile-tablet) {
+    padding: 80px 35px;
+  }
+
+  @include mobile($mobile-tablet, $laptop) {
+    padding: 90px 50px 120px;
+  }
+
+  .footer-grid {
+    @include flexAlign(space-around);
+    align-items: flex-start;
+
+    .footer-header {
+      flex-basis: 100%;
+
+      img {
+        width: 200px;
+        margin-bottom: 20px;
+
+        @include mobile($mobile-small, $mobile-xl) {
+          width: 125px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .footer-info {
+      flex-basis: 30%;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        flex-basis: 30%;
+      }
+    }
+
+    .footer-links {
+      flex-basis: 30%;
+      display: flex;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        flex-wrap: wrap;
+        flex-basis: 50%;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        flex-basis: 35%;
+      }
+
+      .sub-col-links {
+        flex-basis: 40%;
+
+        @include mobile($mobile-small, $mobile-xl) {
+          flex-basis: 100%;
+        }
+
+        @include mobile($mobile-xl, $mobile-tablet) {
+          flex-basis: 50%;
+        }
+
+        ul {
+          list-style: none;
+
+          a {
+            text-decoration: none;
+            color: $accent-color;
+            @include transition(200ms);
+          }
+
+          a:hover {
+            color: $primary-color;
+          }
+        }
+      }
+
+    }
+
+    .footer-contacts {
+      flex-basis: 40%;
+
+      @include mobile($mobile-small, $mobile-xl) {
+        flex-basis: 50%;
+      }
+
+      @include mobile($mobile-xl, $mobile-tablet) {
+        flex-basis: 25%;
+      }
+
+      ul {
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          color: $accent-color;
+
+          h3 {
+            @include smallFont(11px, $accent-color);
+            margin: 5px 0px;
+            @include transition(200ms);
+          }
+
+          h3:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.copyright {
+  @include flexAlign(space-between);
+  padding: 20px 150px;
+  background-color: $bottom-color;
+  font-family: 'Miller Display';
+  color: $accent-color;
+  font-size: 14px;
+  line-height: 2.5;
+
+  @include mobile($mobile-small, $mobile-xl) {
+    padding: 20px 45px;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  @include mobile($mobile-xl, $mobile-tablet) {
+    padding: 20px 35px;
+    font-size: 12px;
+  }
+
+  @include mobile($mobile-tablet, $laptop) {
+    padding: 20px 35px;
+  }
+
+  .copyright-item {
+    flex-basis: 25%;
+
+    @include mobile($mobile-small, $mobile-xl) {
+      flex-basis: 40%;
+    }
+
+    @include mobile($mobile-xl, $mobile-tablet) {
+      flex-basis: 37%;
+    }
+
+    @include mobile($mobile-tablet, $laptop) {
+      flex-basis: 35%;
+    }
+  }
+}

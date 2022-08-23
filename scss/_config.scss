@@ -1,0 +1,33 @@
+$primary-color: #fff;
+$text-color: #000;
+$accent-color: #c7bcb0;
+$paragraph-color: #7B7978;
+$background-color: #F8F8F8;
+$footer-color: #333333;
+$bottom-color: #272727;
+
+
+$font-stack: (
+  "Miller Display",
+  "Merriweather",
+  "Montserrat"
+);
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 800
+);
+
+$mobile-small: 320px;
+$mobile-medium: 375px;
+$mobile-large: 425px;
+$mobile-xl: 600px;
+$mobile-tablet: 768px;
+$laptop: 1024px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

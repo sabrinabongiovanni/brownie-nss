@@ -1,0 +1,1484 @@
+@import url(//db.onlinewebfonts.com/c/1fdf9a4d690c4e7271e535c39f40045f?family=Miller+Display);
+@font-face {
+  font-family: "Miller Display";
+  src: url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.eot");
+  src: url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.svg#Miller Display") format("svg");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  margin: 0;
+  z-index: 99;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: all 300ms ease-in-out;
+}
+.navbar #logo-container {
+  background-color: #c7bcb0;
+  padding: 10px;
+}
+.navbar #logo-container .header-logo {
+  width: 160px;
+}
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .navbar #logo-container .header-logo {
+    width: 95px;
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .navbar #logo-container .header-logo {
+    width: 150px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .navbar #logo-container .header-logo {
+    width: 175px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .navbar #logo-container .header-logo {
+    width: 110px;
+  }
+}
+.navbar #menu-section {
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.navbar #menu-section div {
+  text-align: center;
+  margin: 0px 40px;
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .navbar #menu-section div {
+    margin: 0px 10px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar #menu-section div {
+    margin: 0px 15px;
+  }
+}
+.navbar #menu-section div a {
+  text-decoration: none;
+  color: #000;
+  transition: all 200ms ease-in-out;
+}
+.navbar #menu-section div a:hover {
+  color: #c7bcb0;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .navbar #menu-section {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .navbar #menu-section {
+    font-size: 11px;
+  }
+}
+.navbar #search {
+  margin-right: 100px;
+}
+@media only screen and (min-width: 375px) and (max-width: 600px) {
+  .navbar #search {
+    margin-right: 90px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .navbar #search {
+    margin-right: 10px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar #search {
+    margin-right: 20px;
+  }
+}
+.navbar #search .search-bar {
+  border: 0px;
+  border-bottom: 2px solid black;
+  width: 90px;
+}
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .navbar #search .search-bar {
+    width: 60px;
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .navbar #search .search-bar {
+    width: 90px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .navbar #search .search-bar {
+    width: 75px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .navbar #search .search-bar {
+    width: 50px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar #search .search-bar {
+    width: 70px;
+  }
+}
+.navbar #search #search-button {
+  width: 10px;
+}
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .navbar #search #search-button {
+    width: 15px;
+  }
+}
+
+.scroll-active {
+  top: -20vh;
+  transition: all 300ms ease-in-out;
+}
+
+.menu-btn-container {
+  top: -10vh;
+  right: 20px;
+  z-index: 999;
+  transition: all 300ms ease-in-out;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  position: fixed;
+  cursor: pointer;
+}
+.menu-btn-container .menu-btn-bar1,
+.menu-btn-container .menu-btn-bar2,
+.menu-btn-container .menu-btn-bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #c7bcb0;
+  margin: 3px auto;
+  transition: 0.4s;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .menu-btn-container .menu-btn-bar1,
+.menu-btn-container .menu-btn-bar2,
+.menu-btn-container .menu-btn-bar3 {
+    width: 25px;
+    height: 2px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .menu-btn-container {
+    right: 10px;
+    top: 0px;
+    background-color: transparent;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .menu-btn-container {
+    right: 20px;
+  }
+}
+.menu-btn-container .change .menu-btn-bar1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .menu-btn-container .change .menu-btn-bar1 {
+    transform: rotate(-45deg) translate(-4px, 6px);
+  }
+}
+.menu-btn-container .change .menu-btn-bar2 {
+  opacity: 0;
+}
+.menu-btn-container .change .menu-btn-bar3 {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .menu-btn-container .change .menu-btn-bar3 {
+    transform: rotate(45deg) translate(-5px, -8px);
+  }
+}
+
+.btn-scroll-active {
+  top: 20px;
+  right: 20px;
+  position: fixed;
+  transition: all 300ms ease-in-out;
+}
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .btn-scroll-active {
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+  .btn-scroll-active {
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.scroll-inactive {
+  transition: all 300ms ease-in-out;
+}
+
+.hidden-menu {
+  height: 100vh;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  width: 100%;
+  transition: all 900ms ease-in-out;
+}
+.hidden-menu .hidden-menu-links {
+  margin: 35px;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .hidden-menu .hidden-menu-links {
+    margin: 20px;
+  }
+}
+.hidden-menu .hidden-menu-links a {
+  font-family: Montserrat;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 4px;
+  margin: 30px;
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+}
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .hidden-menu .hidden-menu-links a {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+  .hidden-menu .hidden-menu-links a {
+    font-size: 16px;
+  }
+}
+.hidden-menu .hidden-menu-links a:hover {
+  color: #c7bcb0;
+}
+
+.is-hidden {
+  left: -220vh;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 60%;
+  background-position-x: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  position: relative;
+}
+.hero .heading {
+  max-width: 550px;
+  padding-top: 120px;
+}
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .hero .heading {
+    padding: 120px 25px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .hero .heading {
+    padding-top: 80px;
+  }
+}
+.hero .heading h1 {
+  font-family: "Miller Display";
+  font-size: 75px;
+  font-weight: 400;
+  margin: 40px auto 30px;
+  color: #fff;
+}
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .hero .heading h1 {
+    font-size: 43px;
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+  .hero .heading h1 {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero .heading h1 {
+    font-size: 56px;
+  }
+}
+.hero .heading h3 {
+  font-family: Montserrat;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 4px;
+  margin: 30px;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .hero .heading h3 {
+    font-size: 11px;
+  }
+}
+.hero .heading p {
+  font-family: "Montserrat";
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .hero .heading p {
+    font-size: 9px;
+  }
+}
+.hero .heading button {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 14px 120px;
+  font-family: "Miller Display";
+  color: #c7bcb0;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  border: 0.5px solid #c7bcb0;
+  margin: 50px auto 0px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .hero .heading button {
+    padding: 12px 60px;
+    font-size: 17px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .hero .heading button {
+    margin: 35px auto 100px;
+    padding: 14px 60px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .hero .heading button {
+    margin: 35px auto 100px;
+    padding: 14px 60px;
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero .heading button {
+    padding: 14px 80px;
+  }
+}
+.hero .heading button:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: rgba(199, 188, 176, 0.5);
+}
+
+.overlay-pic {
+  width: 315px;
+  height: 210px;
+  position: absolute;
+  bottom: 0;
+  right: 115px;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/watch-small.png);
+  background-size: cover;
+}
+.overlay-pic .title {
+  width: 50%;
+  margin: 22px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .overlay-pic .title {
+    width: 65%;
+  }
+}
+.overlay-pic .title p {
+  font-size: 16px;
+  font-family: "Miller Display";
+  font-weight: 500;
+  color: #fff;
+}
+.overlay-pic .link {
+  text-align: right;
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+}
+.overlay-pic .link a {
+  font-family: Montserrat;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 4px;
+  margin: 30px;
+  text-decoration: none;
+  font-weight: 800;
+  margin: 10px;
+  transition: all 200ms ease-in-out;
+}
+.overlay-pic .link a:hover {
+  color: #c7bcb0;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .overlay-pic {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .overlay-pic {
+    width: 250px;
+    height: 175px;
+    right: 0px;
+  }
+}
+
+.main {
+  margin: 0px 50px;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .main {
+    margin: 0px 40px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .main {
+    margin: 0px 35px;
+  }
+}
+.main .intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+.main .intro .intro-header {
+  flex-basis: 100%;
+  padding-right: 70%;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .main .intro .intro-header {
+    padding-right: 0px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 1024px) {
+  .main .intro .intro-header {
+    padding-right: 30%;
+  }
+}
+.main .intro .intro-header h2 {
+  font-family: "Miller Display";
+  font-size: 50px;
+  font-weight: 400;
+  margin: 40px auto 30px;
+  color: #000;
+}
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .main .intro .intro-header h2 {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .main .intro .intro-header h2 {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .main .intro .intro-header h2 {
+    font-size: 42px;
+  }
+}
+.main .intro .section1 {
+  flex-basis: 30%;
+  padding-right: 20px;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .main .intro .section1 {
+    flex-basis: 100%;
+    padding-right: 0px;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .main .intro .section1 {
+    flex-basis: 40%;
+  }
+}
+.main .intro .section2 {
+  flex-basis: 50%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .main .intro .section2 {
+    flex-basis: 100%;
+  }
+}
+.main .intro .intro-text p {
+  font-family: "Merriweather";
+  font-size: 11px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  line-height: 2.2;
+  color: #7B7978;
+}
+.main .content-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.main .content-table .table-item {
+  flex-basis: 50%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .main .content-table .table-item {
+    flex-basis: 100%;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .main .content-table .table-item {
+    margin-bottom: 30px;
+  }
+}
+.main .content-table .table-item img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+.main .content-table .table-item .table-text {
+  text-align: center;
+  padding: 0px 60px;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .main .content-table .table-item .table-text {
+    padding: 0px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .main .content-table .table-item .table-text {
+    padding: 0px 15px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .main .content-table .table-item .table-text {
+    padding: 0px 20px;
+  }
+}
+.main .content-table .table-item .table-text h3 {
+  font-family: Montserrat;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 4px;
+  margin: 30px;
+  margin: 15px 0px;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .main .content-table .table-item .table-text h3 {
+    font-size: 11px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .main .content-table .table-item .table-text h3 {
+    font-size: 11px;
+    margin: 15px 0px 0px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .main .content-table .table-item .table-text h3 {
+    font-size: 8px;
+    margin: 15px 0px 0px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .main .content-table .table-item .table-text h3 {
+    font-size: 10px;
+    margin: 10px auto 5px;
+  }
+}
+.main .content-table .table-item .table-text h2 {
+  font-family: "Miller Display";
+  font-size: 45px;
+  font-weight: 400;
+  margin: 40px auto 30px;
+  color: #000;
+  margin: 20px auto;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .main .content-table .table-item .table-text h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .main .content-table .table-item .table-text h2 {
+    font-size: 11px;
+    margin: 10px 0px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .main .content-table .table-item .table-text h2 {
+    font-size: 38px;
+    margin: 0px auto 0px;
+  }
+}
+.main .content-table .table-item .table-text p {
+  font-family: "Merriweather";
+  font-size: 15px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  line-height: 2.2;
+  color: #7B7978;
+  margin: 75px auto 0px;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .main .content-table .table-item .table-text p {
+    font-size: 13px;
+    margin: 30px auto 0px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .main .content-table .table-item .table-text p {
+    font-size: 12px;
+    margin: 20px auto 0px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .main .content-table .table-item .table-text p {
+    font-size: 10px;
+    margin: 0px 0px 0px;
+    line-height: 2;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .main .content-table .table-item .table-text p {
+    font-size: 13px;
+    margin: 15px auto 0px;
+  }
+}
+.main .content-table .table-item button {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 14px 120px;
+  font-family: "Miller Display";
+  color: #c7bcb0;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  border: 0.5px solid #c7bcb0;
+  margin: 50px auto 0px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .main .content-table .table-item button {
+    padding: 15px 75px;
+    font-size: 20px;
+    margin: 20px auto 40px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .main .content-table .table-item button {
+    margin: 10px auto 0px;
+    font-size: 16px;
+    padding: 8px 60px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .main .content-table .table-item button {
+    font-size: 18px;
+    margin: 15px auto 0px;
+    padding: 14px 80px;
+  }
+}
+.main .content-table button:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: rgba(199, 188, 176, 0.5);
+}
+.main .tab-itm-img {
+  flex-basis: 50%;
+}
+
+.press-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .press-section {
+    margin-top: 0px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section {
+    margin-top: 35px;
+  }
+}
+.press-section .section1 {
+  flex-basis: 50%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .press-section .section1 {
+    flex-basis: 100%;
+  }
+}
+.press-section .section1 h2 {
+  font-family: "Miller Display";
+  font-size: 68px;
+  font-weight: 400;
+  margin: 40px auto 30px;
+  color: #000;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .press-section .section1 h2 {
+    font-size: 40px;
+    margin: 15px auto 30px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 1024px) {
+  .press-section .section1 h2 {
+    font-size: 50px;
+  }
+}
+.press-section .section1 p {
+  width: 60%;
+  font-family: "Merriweather";
+  font-size: 15px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  line-height: 2.2;
+  color: #7B7978;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .press-section .section1 p {
+    font-size: 15px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .section1 p {
+    font-size: 11px;
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .press-section .section1 p {
+    font-size: 13px;
+    width: 45%;
+  }
+}
+.press-section .slider {
+  flex-basis: 50%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .press-section .slider {
+    flex-basis: 100%;
+  }
+}
+.press-section .slider .testimonial-container {
+  position: relative;
+  background: #F8F8F8;
+  height: 550px;
+  margin: 50px auto;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .press-section .slider .testimonial-container {
+    height: 370px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container {
+    height: 495px;
+  }
+}
+.press-section .slider .testimonial-container .card-body {
+  height: 300px;
+  width: 90%;
+  margin: 30px auto;
+}
+.press-section .slider .testimonial-container .card-body .card-content {
+  float: right;
+  width: 70%;
+  text-align: left;
+  float: right;
+  margin-top: 170px;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .press-section .slider .testimonial-container .card-body .card-content {
+    float: left;
+    width: 90%;
+    margin: 160px 15px 0px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .press-section .slider .testimonial-container .card-body .card-content {
+    float: left;
+    width: 90%;
+    margin: 170px 15px 0px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container .card-body .card-content {
+    width: 45%;
+    margin-top: 130px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .press-section .slider .testimonial-container .card-body .card-content {
+    width: 55%;
+    margin-top: 155px;
+  }
+}
+.press-section .slider .testimonial-container .card-body .card-content .card-subtitle {
+  font-family: Montserrat;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 4px;
+  margin: 30px;
+  margin: 0px;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .press-section .slider .testimonial-container .card-body .card-content .card-subtitle {
+    margin-top: 20px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container .card-body .card-content .card-subtitle {
+    font-size: 11px;
+  }
+}
+.press-section .slider .testimonial-container .card-body .card-content .card-date {
+  font-family: Montserrat;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #c7bcb0;
+  letter-spacing: 4px;
+  margin: 30px;
+  margin: 10px 0px 0px 0px;
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container .card-body .card-content .card-date {
+    font-size: 11px;
+  }
+}
+.press-section .slider .testimonial-container .card-body .card-content .card-title {
+  font-family: "Miller Display";
+  font-size: 30px;
+  font-weight: 400;
+  margin: 40px auto 30px;
+  color: #000;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .press-section .slider .testimonial-container .card-body .card-content .card-title {
+    font-size: 25px;
+    margin: 25px auto 30px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container .card-body .card-content .card-title {
+    font-size: 23px;
+  }
+}
+.press-section .slider .testimonial-container .card-body img {
+  position: absolute;
+  top: 170px;
+  left: -205px;
+  width: 400px;
+  float: left;
+  box-shadow: -7px 0px 0px #000;
+  filter: grayscale(1);
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .press-section .slider .testimonial-container .card-body img {
+    top: -30px;
+    left: -13px;
+    width: 70%;
+    float: none;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .press-section .slider .testimonial-container .card-body img {
+    top: -30px;
+    left: -5px;
+    width: 65%;
+    float: none;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container .card-body img {
+    top: 130px;
+    left: -140px;
+    width: 270px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .press-section .slider .testimonial-container .card-body img {
+    top: 135px;
+    left: -170px;
+    width: 300px;
+  }
+}
+.press-section .slider .testimonial-container .prev,
+.press-section .slider .testimonial-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 72%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #7B7978;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .press-section .slider .testimonial-container {
+    top: 92%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container {
+    top: 74%;
+  }
+}
+.press-section .slider .testimonial-container .prev {
+  left: 210px;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .press-section .slider .testimonial-container .prev {
+    left: 15px;
+    top: 340px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .press-section .slider .testimonial-container .prev {
+    left: 20px;
+    top: 340px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container .prev {
+    left: 130px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .press-section .slider .testimonial-container .prev {
+    left: 140px;
+    top: 415px;
+  }
+}
+.press-section .slider .testimonial-container .next {
+  left: 250px;
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .press-section .slider .testimonial-container .next {
+    left: 50px;
+    top: 340px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .press-section .slider .testimonial-container .next {
+    left: 50px;
+    top: 340px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .press-section .slider .testimonial-container .next {
+    left: 165px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .press-section .slider .testimonial-container .next {
+    left: 200px;
+    top: 415px;
+  }
+}
+.press-section .slider .testimonial-container .prev:hover,
+.press-section .slider .testimonial-container .next:hover {
+  color: #c7bcb0;
+}
+.press-section .slider .testimonial-container .slide .item {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.product-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.product-showcase img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.product-showcase .showcase-social {
+  flex-basis: 50%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .product-showcase .showcase-social {
+    flex-basis: 100%;
+  }
+}
+.product-showcase .showcase-social a {
+  text-decoration: none;
+}
+.product-showcase .showcase-social .showcase-social-content {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/prod-showcase-1.png);
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 150px;
+  transition: all 200ms ease-in-out;
+  color: #fff;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .product-showcase .showcase-social .showcase-social-content {
+    padding: 0px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .product-showcase .showcase-social .showcase-social-content {
+    padding: 30px;
+  }
+}
+.product-showcase .showcase-social .showcase-social-content h3 {
+  font-family: Montserrat;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: inherit;
+  letter-spacing: 4px;
+  margin: 30px;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .product-showcase .showcase-social .showcase-social-content h3 {
+    font-size: 12px;
+    margin: 50px auto 0px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .product-showcase .showcase-social .showcase-social-content h3 {
+    font-size: 12px;
+  }
+}
+.product-showcase .showcase-social .showcase-social-content h2 {
+  font-family: "Miller Display";
+  font-size: 70px;
+  font-weight: 400;
+  margin: 40px auto 30px;
+  color: inherit;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .product-showcase .showcase-social .showcase-social-content h2 {
+    font-size: 30px;
+    padding: 0px 30px;
+    margin: 40px auto 60px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .product-showcase .showcase-social .showcase-social-content h2 {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .product-showcase .showcase-social .showcase-social-content h2 {
+    font-size: 50px;
+    margin: 10pz auto 30px;
+  }
+}
+.product-showcase .showcase-social .showcase-social-content:hover {
+  background: linear-gradient(rgba(199, 188, 176, 0.6), rgba(199, 188, 176, 0.6)), url(../media/prod-showcase-1.png);
+  background-size: cover;
+  color: #000;
+}
+.product-showcase .showcase-grid {
+  flex-basis: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .product-showcase .showcase-grid {
+    flex-basis: 100%;
+  }
+}
+.product-showcase .showcase-grid-item {
+  flex-basis: 50%;
+}
+.product-showcase .showcase-grid-item a {
+  transition: all 200ms ease-in-out;
+}
+.product-showcase .showcase-grid-item a:hover {
+  filter: grayscale(1);
+}
+
+.contacts-section {
+  width: 100%;
+  background: url(../media/contacts-bg.png);
+  background-size: cover;
+  background-position-y: center;
+  margin-top: 50px;
+}
+.contacts-section .contacts-content {
+  background-color: rgba(199, 188, 176, 0.7);
+  padding: 10px 300px 40px;
+  text-align: center;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .contacts-section .contacts-content {
+    padding: 15px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .contacts-section .contacts-content {
+    padding: 10px 85px 40px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .contacts-section .contacts-content {
+    padding: 10px 150px 40px;
+  }
+}
+.contacts-section .contacts-content h2 {
+  font-family: "Miller Display";
+  font-size: 70px;
+  font-weight: 400;
+  margin: 40px auto 30px;
+  color: #fff;
+  margin: 15px auto;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .contacts-section .contacts-content h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .contacts-section .contacts-content h2 {
+    font-size: 50px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .contacts-section .contacts-content h2 {
+    font-size: 60px;
+  }
+}
+.contacts-section .contacts-content h3 {
+  font-family: Montserrat;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 4px;
+  margin: 30px;
+  margin: 10px auto 35px;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .contacts-section .contacts-content h3 {
+    font-size: 11px;
+    margin: 10px auto 20px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .contacts-section .contacts-content h3 {
+    font-size: 13px;
+  }
+}
+.contacts-section .contacts-content #email,
+.contacts-section .contacts-content #submit-button {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 15px 15px;
+  text-align: left;
+  font-family: "Miller Display";
+  background-color: transparent;
+  margin-right: 10px;
+  font-size: 16px;
+  transition: all 200ms ease-in-out;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .contacts-section .contacts-content #email,
+.contacts-section .contacts-content #submit-button {
+    padding: 13px 15px;
+    margin-right: 5px;
+  }
+}
+.contacts-section .contacts-content #email::-moz-placeholder {
+  color: #fff;
+  font-size: 16px;
+}
+.contacts-section .contacts-content #email:-ms-input-placeholder {
+  color: #fff;
+  font-size: 16px;
+}
+.contacts-section .contacts-content #email::placeholder {
+  color: #fff;
+  font-size: 16px;
+}
+.contacts-section #email {
+  width: 268px;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .contacts-section #email {
+    width: 145px;
+  }
+}
+.contacts-section #submit-button {
+  cursor: pointer;
+}
+.contacts-section #submit-button:hover {
+  border: 2px solid #fff;
+}
+
+footer {
+  padding: 120px 150px 150px;
+  background-color: #333333;
+  font-family: "Miller Display";
+  color: #c7bcb0;
+  font-size: 14px;
+  line-height: 2.5;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  footer {
+    padding: 40px 45px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  footer {
+    padding: 80px 35px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  footer {
+    padding: 90px 50px 120px;
+  }
+}
+footer .footer-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+footer .footer-grid .footer-header {
+  flex-basis: 100%;
+}
+footer .footer-grid .footer-header img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  footer .footer-grid .footer-header img {
+    width: 125px;
+    margin-bottom: 0px;
+  }
+}
+footer .footer-grid .footer-info {
+  flex-basis: 30%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  footer .footer-grid .footer-info {
+    flex-basis: 100%;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  footer .footer-grid .footer-info {
+    flex-basis: 30%;
+  }
+}
+footer .footer-grid .footer-links {
+  flex-basis: 30%;
+  display: flex;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  footer .footer-grid .footer-links {
+    flex-wrap: wrap;
+    flex-basis: 50%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  footer .footer-grid .footer-links {
+    flex-basis: 35%;
+  }
+}
+footer .footer-grid .footer-links .sub-col-links {
+  flex-basis: 40%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  footer .footer-grid .footer-links .sub-col-links {
+    flex-basis: 100%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  footer .footer-grid .footer-links .sub-col-links {
+    flex-basis: 50%;
+  }
+}
+footer .footer-grid .footer-links .sub-col-links ul {
+  list-style: none;
+}
+footer .footer-grid .footer-links .sub-col-links ul a {
+  text-decoration: none;
+  color: #c7bcb0;
+  transition: all 200ms ease-in-out;
+}
+footer .footer-grid .footer-links .sub-col-links ul a:hover {
+  color: #fff;
+}
+footer .footer-grid .footer-contacts {
+  flex-basis: 40%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  footer .footer-grid .footer-contacts {
+    flex-basis: 50%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  footer .footer-grid .footer-contacts {
+    flex-basis: 25%;
+  }
+}
+footer .footer-grid .footer-contacts ul {
+  list-style: none;
+}
+footer .footer-grid .footer-contacts ul a {
+  text-decoration: none;
+  color: #c7bcb0;
+}
+footer .footer-grid .footer-contacts ul a h3 {
+  font-family: Montserrat;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #c7bcb0;
+  letter-spacing: 4px;
+  margin: 30px;
+  margin: 5px 0px;
+  transition: all 200ms ease-in-out;
+}
+footer .footer-grid .footer-contacts ul a h3:hover {
+  color: #fff;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 150px;
+  background-color: #272727;
+  font-family: "Miller Display";
+  color: #c7bcb0;
+  font-size: 14px;
+  line-height: 2.5;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .copyright {
+    padding: 20px 45px;
+    font-size: 11px;
+    line-height: 1;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .copyright {
+    padding: 20px 35px;
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .copyright {
+    padding: 20px 35px;
+  }
+}
+.copyright .copyright-item {
+  flex-basis: 25%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .copyright .copyright-item {
+    flex-basis: 40%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .copyright .copyright-item {
+    flex-basis: 37%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .copyright .copyright-item {
+    flex-basis: 35%;
+  }
+}/*# sourceMappingURL=main.css.map */
