@@ -1,8 +1,15 @@
-@import url(//db.onlinewebfonts.com/c/1fdf9a4d690c4e7271e535c39f40045f?family=Miller+Display);
 @font-face {
   font-family: "Miller Display";
-  src: url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.eot");
-  src: url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1fdf9a4d690c4e7271e535c39f40045f.svg#Miller Display") format("svg");
+  src: url("../font/Miller-Display.ttf");
+}
+@font-face {
+  font-family: "Merriweather";
+  src: url("../font/Merriweather-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  font-weight: bold;
+  src: url("../font/Montserrat-Bold.ttf");
 }
 * {
   box-sizing: border-box;
@@ -339,7 +346,7 @@ body {
 }
 .hero .heading h1 {
   font-family: "Miller Display";
-  font-size: 75px;
+  font-size: 70px;
   font-weight: 400;
   margin: 40px auto 30px;
   color: #fff;

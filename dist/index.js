@@ -31,8 +31,6 @@ function currentSlide(n) {
 
 function showSlides(n) {
   var slides = document.getElementsByClassName("slides");
-
-  console.log(slides);
   slides[0].style.display = "block";
 
   if (n > slides.length) {
