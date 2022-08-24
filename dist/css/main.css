@@ -79,6 +79,11 @@ body {
     margin: 0px 15px;
   }
 }
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .navbar #menu-section div {
+    margin: 0px 20px;
+  }
+}
 .navbar #menu-section div a {
   text-decoration: none;
   color: #000;
@@ -193,7 +198,14 @@ body {
     height: 2px;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 600px) {
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .menu-btn-container {
+    right: 10px;
+    top: -5px;
+    background-color: transparent;
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 600px) {
   .menu-btn-container {
     right: 10px;
     top: 0px;
@@ -293,7 +305,7 @@ body {
 }
 
 .is-hidden {
-  left: -220vh;
+  left: -250vh;
 }
 
 .hero {
@@ -422,8 +434,8 @@ body {
   bottom: 0;
   right: 115px;
   box-sizing: border-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/watch-small.png);
-  background-size: cover;
+  -webkit-animation: animate 20s ease-in-out infinite;
+          animation: animate 20s ease-in-out infinite;
 }
 .overlay-pic .title {
   width: 50%;
@@ -471,6 +483,57 @@ body {
     width: 250px;
     height: 175px;
     right: 0px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .overlay-pic {
+    width: 265px;
+    height: 180px;
+    right: 25px;
+  }
+}
+@-webkit-keyframes animate {
+  0%, 100% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-1.png);
+    background-size: cover;
+  }
+  20% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-2.png);
+    background-size: cover;
+  }
+  40% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-3.png);
+    background-size: cover;
+  }
+  60% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-4.png);
+    background-size: cover;
+  }
+  80% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-5.png);
+    background-size: cover;
+  }
+}
+@keyframes animate {
+  0%, 100% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-1.png);
+    background-size: cover;
+  }
+  20% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-2.png);
+    background-size: cover;
+  }
+  40% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-3.png);
+    background-size: cover;
+  }
+  60% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-4.png);
+    background-size: cover;
+  }
+  80% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-5.png);
+    background-size: cover;
   }
 }
 
@@ -606,6 +669,11 @@ body {
     padding: 0px 20px;
   }
 }
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .main .content-table .table-item .table-text {
+    padding: 0px 30px;
+  }
+}
 .main .content-table .table-item .table-text h3 {
   font-family: Montserrat;
   font-size: 14px;
@@ -697,6 +765,11 @@ body {
     margin: 15px auto 0px;
   }
 }
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .main .content-table .table-item .table-text p {
+    margin: 40px auto 0px;
+  }
+}
 .main .content-table .table-item button {
   background-color: rgba(255, 255, 255, 0);
   padding: 14px 120px;
@@ -779,7 +852,7 @@ body {
     margin: 15px auto 30px;
   }
 }
-@media only screen and (min-width: 425px) and (max-width: 1024px) {
+@media only screen and (min-width: 425px) and (max-width: 1280px) {
   .press-section .section1 h2 {
     font-size: 50px;
   }
@@ -809,6 +882,12 @@ body {
   .press-section .section1 p {
     font-size: 13px;
     width: 45%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .press-section .section1 p {
+    font-size: 14px;
+    width: 50%;
   }
 }
 .press-section .slider {
@@ -870,6 +949,12 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .press-section .slider .testimonial-container .card-body .card-content {
     width: 55%;
+    margin-top: 155px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .press-section .slider .testimonial-container .card-body .card-content {
+    width: 67%;
     margin-top: 155px;
   }
 }
@@ -963,6 +1048,13 @@ body {
     width: 300px;
   }
 }
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .press-section .slider .testimonial-container .card-body img {
+    top: 120px;
+    left: -210px;
+    width: 350px;
+  }
+}
 .press-section .slider .testimonial-container .prev,
 .press-section .slider .testimonial-container .next {
   cursor: pointer;
@@ -1017,6 +1109,11 @@ body {
     top: 415px;
   }
 }
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .press-section .slider .testimonial-container .prev {
+    left: 150px;
+  }
+}
 .press-section .slider .testimonial-container .next {
   left: 250px;
 }
@@ -1043,11 +1140,16 @@ body {
     top: 415px;
   }
 }
-.press-section .slider .testimonial-container .prev:hover,
-.press-section .slider .testimonial-container .next:hover {
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .press-section .slider .testimonial-container .next {
+    left: 180px;
+  }
+}
+.press-section .slider .prev:hover,
+.press-section .slider .next:hover {
   color: #c7bcb0;
 }
-.press-section .slider .testimonial-container .slide .item {
+.press-section .slider .slide .item {
   -webkit-animation-name: fade;
           animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -1091,9 +1193,6 @@ body {
     flex-basis: 100%;
   }
 }
-.product-showcase .showcase-social a {
-  text-decoration: none;
-}
 .product-showcase .showcase-social .showcase-social-content {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/prod-showcase-1.png);
   background-size: cover;
@@ -1105,7 +1204,6 @@ body {
   text-align: center;
   padding: 150px;
   transition: all 200ms ease-in-out;
-  color: #fff;
 }
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   .product-showcase .showcase-social .showcase-social-content {
@@ -1117,7 +1215,16 @@ body {
     padding: 30px;
   }
 }
-.product-showcase .showcase-social .showcase-social-content h3 {
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .product-showcase .showcase-social .showcase-social-content {
+    padding: 70px;
+  }
+}
+.product-showcase .showcase-social .showcase-social-content a {
+  text-decoration: none;
+  color: #fff;
+}
+.product-showcase .showcase-social .showcase-social-content a h3 {
   font-family: Montserrat;
   font-size: 14px;
   text-transform: uppercase;
@@ -1126,17 +1233,17 @@ body {
   margin: 30px;
 }
 @media only screen and (min-width: 320px) and (max-width: 600px) {
-  .product-showcase .showcase-social .showcase-social-content h3 {
+  .product-showcase .showcase-social .showcase-social-content a h3 {
     font-size: 12px;
     margin: 50px auto 0px;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 768px) {
-  .product-showcase .showcase-social .showcase-social-content h3 {
+  .product-showcase .showcase-social .showcase-social-content a h3 {
     font-size: 12px;
   }
 }
-.product-showcase .showcase-social .showcase-social-content h2 {
+.product-showcase .showcase-social .showcase-social-content a h2 {
   font-family: "Miller Display";
   font-size: 70px;
   font-weight: 400;
@@ -1144,19 +1251,19 @@ body {
   color: inherit;
 }
 @media only screen and (min-width: 320px) and (max-width: 600px) {
-  .product-showcase .showcase-social .showcase-social-content h2 {
+  .product-showcase .showcase-social .showcase-social-content a h2 {
     font-size: 30px;
     padding: 0px 30px;
     margin: 40px auto 60px;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 768px) {
-  .product-showcase .showcase-social .showcase-social-content h2 {
+  .product-showcase .showcase-social .showcase-social-content a h2 {
     font-size: 40px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .product-showcase .showcase-social .showcase-social-content h2 {
+  .product-showcase .showcase-social .showcase-social-content a h2 {
     font-size: 50px;
     margin: 10pz auto 30px;
   }
@@ -1211,6 +1318,11 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .contacts-section .contacts-content {
     padding: 10px 150px 40px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .contacts-section .contacts-content {
+    padding: 10px 250px 40px;
   }
 }
 .contacts-section .contacts-content h2 {
@@ -1325,6 +1437,11 @@ footer {
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   footer {
     padding: 90px 50px 120px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  footer {
+    padding: 90px 60px 120px;
   }
 }
 footer .footer-grid {
@@ -1462,6 +1579,11 @@ footer .footer-grid .footer-contacts ul a h3:hover {
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .copyright {
     padding: 20px 35px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .copyright {
+    padding: 20px 60px;
   }
 }
 .copyright .copyright-item {

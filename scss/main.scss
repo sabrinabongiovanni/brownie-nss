@@ -149,6 +149,10 @@ body {
         margin: 0px 15px;
       }
 
+      @include mobile($laptop, $desktop) {
+        margin: 0px 20px;
+      }
+
       a {
         text-decoration: none;
         color: $text-color;
@@ -257,7 +261,13 @@ body {
     }
   }
 
-  @include mobile($mobile-small, $mobile-xl) {
+  @include mobile($mobile-small, $mobile-medium) {
+    right: 10px;
+    top: -5px;
+    background-color: transparent;
+  }
+
+  @include mobile($mobile-medium, $mobile-xl) {
     right: 10px;
     top: 0px;
     background-color: transparent;
@@ -357,7 +367,7 @@ body {
 }
 
 .is-hidden {
-  left: -220vh;
+  left: -250vh;
 }
 
 .hero {
@@ -458,8 +468,7 @@ body {
   bottom: 0;
   right: 115px;
   box-sizing: border-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/watch-small.png);
-  background-size: cover;
+  animation: animate 20s ease-in-out infinite;
 
   .title {
     width: 50%;
@@ -505,7 +514,45 @@ body {
     height: 175px;
     right: 0px;
   }
+
+  @include mobile($laptop, $desktop) {
+    width: 265px;
+    height: 180px;
+    right: 25px;
+  }
+
+  @keyframes animate {
+
+    0%,
+    100% {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-1.png);
+      background-size: cover;
+    }
+
+    20% {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-2.png);
+      background-size: cover;
+    }
+
+    40% {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-3.png);
+      background-size: cover;
+    }
+
+    60% {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-4.png);
+      background-size: cover;
+    }
+
+    80% {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/slideshow-5.png);
+      background-size: cover;
+    }
+
+  }
 }
+
+
 
 .main {
   margin: 0px 50px;
@@ -617,6 +664,10 @@ body {
           padding: 0px 20px;
         }
 
+        @include mobile($laptop, $desktop) {
+          padding: 0px 30px;
+        }
+
         h3 {
           @include smallFont(14px, $text-color);
           margin: 15px 0px;
@@ -683,6 +734,10 @@ body {
           @include mobile($mobile-tablet, $laptop) {
             font-size: 13px;
             margin: 15px auto 0px;
+          }
+
+          @include mobile($laptop, $desktop) {
+            margin: 40px auto 0px;
           }
         }
       }
@@ -751,7 +806,7 @@ body {
         margin: 15px auto 30px;
       }
 
-      @include mobile($mobile-large, $laptop) {
+      @include mobile($mobile-large, $desktop) {
         font-size: 50px;
       }
 
@@ -775,6 +830,11 @@ body {
       @include mobile($mobile-tablet, $laptop) {
         font-size: 13px;
         width: 45%;
+      }
+
+      @include mobile($laptop, $desktop) {
+        font-size: 14px;
+        width: 50%;
       }
     }
   }
@@ -831,6 +891,11 @@ body {
 
           @include mobile($mobile-tablet, $laptop) {
             width: 55%;
+            margin-top: 155px;
+          }
+
+          @include mobile($mobile-tablet, $laptop) {
+            width: 67%;
             margin-top: 155px;
           }
 
@@ -905,6 +970,12 @@ body {
             left: -170px;
             width: 300px;
           }
+
+          @include mobile($laptop, $desktop) {
+            top: 120px;
+            left: -210px;
+            width: 350px;
+          }
         }
       }
 
@@ -953,6 +1024,10 @@ body {
           left: 140px;
           top: 415px;
         }
+
+        @include mobile($laptop, $desktop) {
+          left: 150px;
+        }
       }
 
       .next {
@@ -976,26 +1051,30 @@ body {
           left: 200px;
           top: 415px;
         }
-      }
 
-      .prev:hover,
-      .next:hover {
-        color: $accent-color;
-      }
-
-      .slide .item {
-        animation-name: fade;
-        animation-duration: 1.5s;
-      }
-
-      @keyframes fade {
-        from {
-          opacity: 0.4;
+        @include mobile($laptop, $desktop) {
+          left: 180px;
         }
+      }
+    }
 
-        to {
-          opacity: 1
-        }
+    .prev:hover,
+    .next:hover {
+      color: $accent-color;
+    }
+
+    .slide .item {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0.4;
+      }
+
+      to {
+        opacity: 1
       }
     }
   }
@@ -1018,10 +1097,6 @@ body {
       flex-basis: 100%;
     }
 
-    a {
-      text-decoration: none;
-    }
-
     .showcase-social-content {
       background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../media/prod-showcase-1.png);
       background-size: cover;
@@ -1030,7 +1105,6 @@ body {
       text-align: center;
       padding: 150px;
       @include transition(200ms);
-      color: $primary-color;
 
       @include mobile($mobile-small, $mobile-xl) {
         padding: 0px;
@@ -1040,37 +1114,48 @@ body {
         padding: 30px;
       }
 
-      h3 {
-        @include smallFont(14px, inherit);
-
-        @include mobile($mobile-small, $mobile-xl) {
-          font-size: 12px;
-          margin: 50px auto 0px;
-        }
-
-        @include mobile($mobile-xl, $mobile-tablet) {
-          font-size: 12px;
-        }
-
+      @include mobile($laptop, $desktop) {
+        padding: 70px;
       }
 
-      h2 {
-        @include headerFont(70px, inherit);
+      a {
+        text-decoration: none;
+        color: $primary-color;
 
-        @include mobile($mobile-small, $mobile-xl) {
-          font-size: 30px;
-          padding: 0px 30px;
-          margin: 40px auto 60px;
+        h3 {
+          @include smallFont(14px, inherit);
+
+          @include mobile($mobile-small, $mobile-xl) {
+            font-size: 12px;
+            margin: 50px auto 0px;
+          }
+
+          @include mobile($mobile-xl, $mobile-tablet) {
+            font-size: 12px;
+          }
+
         }
 
-        @include mobile($mobile-xl, $mobile-tablet) {
-          font-size: 40px;
+        h2 {
+          @include headerFont(70px, inherit);
+
+          @include mobile($mobile-small, $mobile-xl) {
+            font-size: 30px;
+            padding: 0px 30px;
+            margin: 40px auto 60px;
+          }
+
+          @include mobile($mobile-xl, $mobile-tablet) {
+            font-size: 40px;
+          }
+
+          @include mobile($mobile-tablet, $laptop) {
+            font-size: 50px;
+            margin: 10pz auto 30px;
+          }
         }
 
-        @include mobile($mobile-tablet, $laptop) {
-          font-size: 50px;
-          margin: 10pz auto 30px;
-        }
+
       }
     }
 
@@ -1128,6 +1213,10 @@ body {
 
     @include mobile($mobile-tablet, $laptop) {
       padding: 10px 150px 40px;
+    }
+
+    @include mobile($mobile-tablet, $laptop) {
+      padding: 10px 250px 40px;
     }
 
     h2 {
@@ -1223,6 +1312,10 @@ footer {
 
   @include mobile($mobile-tablet, $laptop) {
     padding: 90px 50px 120px;
+  }
+
+  @include mobile($laptop, $desktop) {
+    padding: 90px 60px 120px;
   }
 
   .footer-grid {
@@ -1355,6 +1448,10 @@ footer {
 
   @include mobile($mobile-tablet, $laptop) {
     padding: 20px 35px;
+  }
+
+  @include mobile($laptop, $desktop) {
+    padding: 20px 60px;
   }
 
   .copyright-item {
